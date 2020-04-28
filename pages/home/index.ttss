@@ -1,0 +1,59 @@
+
+.layout{
+  background:linear-gradient(0deg,rgba(0,3,7,1),rgba(19,69,137,1));
+  min-height: 400rpx;
+}
+.footer{
+  text-align: center;
+  background: #242427;
+  color: #CCCCCC;
+  font-size: 0.6rem;
+}
+.footer .title{
+  color: #fff;
+    font-size: 0.8rem;
+}
+
+.blue-title{
+  padding: 0.5rem 3rem;
+}
+.blue-info{
+  padding: 0.5rem 1.5rem;
+  font-size: 0.7rem;
+  color: #fff;
+}
+.blue-btn-box{
+  padding: 2rem 4rem;
+}
+.blue-btn-box button{
+  border-radius: 1rem; 
+}
+
+.func-box{
+  text-align: center;
+}
+.func-box .title{
+  font-size:1.5rem;
+  font-family:PangMenZhengDao;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:3rem;
+}
+.func{
+  display: flex;
+  flex-direction:row; 
+}
+.func-item{
+  padding: 0.5rem 1rem;
+  text-align: center;
+  width: 6rem;
+  color: #fff;
+  font-size: 0.7rem;
+}
+
+.tips{
+  text-align: center;
+  font-size:0.7rem;
+  color: #fff; 
+  background: #242427;
+}

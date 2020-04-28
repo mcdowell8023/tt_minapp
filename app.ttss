@@ -1,0 +1,191 @@
+
+/* rem 布局 */
+html{
+    font-size:20px;
+}
+@media only screen and (min-width: 401px){
+    html {
+        font-size: 25px !important;
+    }
+}
+@media only screen and (min-width: 428px){
+    html {
+        font-size: 26.75px !important;
+    }
+}
+@media only screen and (min-width: 481px){
+    html {
+        font-size: 30px !important; 
+    }
+}
+@media only screen and (min-width: 569px){
+    html {
+        font-size: 35px !important; 
+    }
+}
+@media only screen and (min-width: 641px){
+    html {
+        font-size: 40px !important; 
+    }
+}
+
+/* common */
+.pt5{
+    padding-top: 0.25rem
+}
+.pt10{
+    padding-top: 0.5rem
+}
+.pt15{
+    padding-top: 0.75rem
+}
+.pt20{
+    padding-top: 1rem
+}
+.pt30{
+    padding-top: 1.5rem
+}
+.pt40{
+    padding-top: 2rem
+}
+.pb5{
+    padding-bottom: 0.25rem
+}
+.pb10{
+    padding-bottom: 0.5rem
+}
+.pb15{
+    padding-bottom: 0.75rem
+}
+.pb20{
+    padding-bottom: 1rem
+}
+.pb30{
+    padding-bottom: 1.5rem
+}
+.pb40{
+    padding-bottom: 2rem
+}
+
+.pl5{
+    padding-left: 0.25rem
+}
+.pl10{
+    padding-left: 0.5rem
+}
+.pl15{
+    padding-left: 0.75rem
+}
+.pl20{
+    padding-left: 1rem
+}
+.pl30{
+    padding-left: 1.5rem
+}
+.pl40{
+    padding-left: 2rem
+}
+
+.pr5{
+    padding-right: 0.25rem
+}
+.pr10{
+    padding-right: 0.5rem
+}
+.pr15{
+    padding-right: 0.75rem
+}
+.pr20{
+    padding-right: 1rem
+}
+.pr30{
+    padding-right: 1.5rem
+}
+.pr40{
+    padding-right: 2rem
+}
+
+.mt5{
+    margin-top: 0.25rem
+}
+.mt10{
+    margin-top: 0.5rem
+}
+.mt15{
+    margin-top: 0.75rem
+}
+.mt20{
+    margin-top: 1rem
+}
+.mt30{
+    margin-top: 1.5rem
+}
+.mt40{
+    margin-top: 2rem
+}
+.mb5{
+    margin-bottom: 0.25rem
+}
+.mb10{
+    margin-bottom: 0.5rem
+}
+.mb15{
+    margin-bottom: 0.75rem
+}
+.mb20{
+    margin-bottom: 1rem
+}
+.mb30{
+    margin-bottom: 1.5rem
+}
+.mb40{
+    margin-bottom: 2rem
+}
+
+.ml5{
+    margin-left: 0.25rem
+}
+.ml10{
+    margin-left: 0.5rem
+}
+.ml15{
+    margin-left: 0.75rem
+}
+.ml20{
+    margin-left: 1rem
+}
+.ml30{
+    margin-left: 1.5rem
+}
+.ml40{
+    margin-left: 2rem
+}
+
+.mr5{
+    margin-right: 0.25rem
+}
+.mr10{
+    margin-right: 0.5rem
+}
+.mr15{
+    margin-right: 0.75rem
+}
+.mr20{
+    margin-right: 1rem
+}
+.mr30{
+    margin-right: 1.5rem
+}
+.mr40{
+    margin-right: 2rem
+}
+
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}

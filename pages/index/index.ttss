@@ -1,0 +1,16 @@
+.body{
+    width: 100%;
+    height: 100vh;
+    background:url('./image/start.png') center 100%;
+    background-size: cover;
+}
+.blue-btn-box{
+    position: fixed;
+    /* bottom: 3rem; */
+    bottom: 8.5rem;
+    width: 100%;
+    /* display: flex; */
+}
+.blue-btn-box button{
+    width: 60%;
+}

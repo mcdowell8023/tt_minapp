@@ -1,0 +1,49 @@
+<scroll-view class="scroll-view" scroll-y scroll-with-animation bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll">
+	<view class="layout">
+		<!-- <view class="pt5 pb5 tips">{{count}}s后，页面将会跳转到体验页面</view> -->
+		<view>
+			<image src="/image/banner@2x.png" lazy-load="{{lazyLoad}}" style="width:100%;" mode="widthFix" />
+		</view>
+
+		<view class="blue-title">
+			<image src="/image/blue-cloud@2x.png" title="蓝将云" lazy-load="{{lazyLoad}}" style="width:100%;" mode="widthFix" />
+		</view>
+		<view class="blue-info">
+			<text>{{blueInfo}}</text>
+		</view>
+
+		<view class="text-center pt10 pb10">
+			<image src="/image/phone@2x.png" title="蓝将云手机" lazy-load="{{lazyLoad}}" style="width:60%;" mode="widthFix" />
+		</view>
+		<!-- <view class="blue-info">
+			<image src="/image/ad-banner@2x.png" title="蓝将云手机" lazy-load="{{lazyLoad}}" style="width:100%;" mode="widthFix" />
+		</view> -->
+		<view class="blue-btn-box">
+			<button type="primary" bindtap="go2Webview">点击立即试玩</button>
+		</view>
+		<view class="func-box pt20 pb20">
+			<view>
+			<image src="/image/cloud-phone@2x.png" title="蓝将云手机" lazy-load="{{lazyLoad}}" style="width:25%;" mode="widthFix" />
+			</view>
+			<view class="func pt20 pl20 pr20">
+				<view class="func-item" tt:for="{{funcItems1}}">
+					<image src="{{item.image}}" title="{{item.title}}" lazy-load="{{lazyLoad}}" style="width:25%;" mode="widthFix" />
+					<view><text>{{item.title}}</text></view>
+				</view>
+			</view>
+			<view class="func pl20 pr20">
+				<view class="func-item" tt:for="{{funcItems2}}">
+					<image src="{{item.image}}" title="{{item.title}}" lazy-load="{{lazyLoad}}" style="width:25%;" mode="widthFix" />
+					<view><text>{{item.title}}</text></view>
+				</view>
+			</view>
+		</view>
+
+
+	</view>
+	<view class="footer">
+		<view class="title pb10 pt10">联系我们</view>
+		<view class="pb10">咨询热线：400-6699-160（7*24小时）</view>
+		<view class="pb20">ICP证：京ICP备19003704号-1</view>
+	</view>
+</scroll-view>

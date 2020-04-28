@@ -1,0 +1,7 @@
+<view class="body">
+	<!-- <image src="/image/game-banner-1.png" lazy-load="{{lazyLoad}}" style="width:100%;" mode="widthFix" /> -->
+	<view class="blue-btn-box">
+		<!-- <button type="default" class="mr10" bindtap="download">立即下载</button> -->
+		<button type="primary" bindtap="go2Webview">立 即 试 用</button>
+	</view>
+</view >

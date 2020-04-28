@@ -1,0 +1,6 @@
+<view class="intro">
+    <web-view src="https://test.91lanjiang.com:8101/#/?key=3B8A614226A953A8CD9526FCA6FE9BA5"></web-view>
+    <!-- <web-view src="https://apps.apple.com/cn/app/id1436135312?l=zh&ls=1"></web-view> -->
+    <!-- <web-view src="https://test.91lanjiang.com/images/server_dir/public/yidaochuanshizhu_1001.apk"></web-view> -->
+    
+</view>
