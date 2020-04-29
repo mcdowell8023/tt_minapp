@@ -2,7 +2,7 @@
  * @Author: mcdowell
  * @Date: 2020-04-27 15:11:42
  * @LastEditors: mcdowell
- * @LastEditTime: 2020-04-27 17:03:27
+ * @LastEditTime: 2020-04-28 15:49:49
  */
 import httpRequest from 'api.js'
 /**
@@ -36,8 +36,8 @@ function getWeatherDistrict(params) {
  * @param { string } code 城市行政编码
  * @return:
  */
-function getWeather(params) {
-  return httpRequest('/weather/getWeather', params)
+function getWeather(code) {
+  return httpRequest('/weather/getWeather?code=' + code)
 }
 
 export { getWeatherProvince, getWeatherCity, getWeatherDistrict, getWeather }

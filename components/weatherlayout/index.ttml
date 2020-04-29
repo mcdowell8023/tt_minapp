@@ -1,0 +1,5 @@
+<view class="weatherlayout">
+  <view class="weatherlayout-content" style="background-image: url({{weatherBGUrl}}{{weatherCode}}{{weatherStr}}.png);">
+    <slot></slot>
+  </view>
+</view>

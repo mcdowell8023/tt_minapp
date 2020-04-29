@@ -1,0 +1,15 @@
+<view class="weather-forecasts">
+  <view class="box-title">5天预报</view>
+  <view class="weather-list">
+    <view class="weather-list-item" tt:for="{{[1,2,3,4,5]}}" tt:for-index="idx" tt:for-item="itemName">
+      <text class="title">{{weatherData.week}}</text>
+      <text class="min-text">{{weatherData.date}}</text>
+      <view class="weather-list-item-icon">
+      <image src="{{weatherIconUrl}}{{weatherData.text_day_code}}.png" class="weather-icon-min" mode="widthFix" />
+      </view>
+      <text class="min-text">{{weatherData.low}}°~{{weatherData.high}}°</text>
+      <text class="title">{{weatherData.wd_day}}</text>
+      <text class="min-text">{{weatherData.wc_day}}</text>
+    </view>
+  </view>
+</view>

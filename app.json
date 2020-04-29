@@ -1,12 +1,9 @@
 {
-  "pages":[
-    "pages/home/index",
-    "pages/webView/index"
-  ],
-  "window":{
-    "backgroundTextStyle":"black",
+  "pages": ["pages/weather/index", "pages/webView/index"],
+  "window": {
+    "backgroundTextStyle": "black",
     "navigationBarBackgroundColor": "black",
     "navigationBarTitleText": "蓝将云手机",
-    "navigationBarTextStyle":"#fff"
+    "navigationBarTextStyle": "#fff"
   }
 }

@@ -1,0 +1,31 @@
+.weather-icon {
+  width: 96rpx;
+  height: 96rpx;
+}
+
+.weather-icon-min {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.weather-header {
+  padding: 20rpx, 10rpx;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.weather-header image {
+  top: -4rpx;
+  position: relative;
+  vertical-align: middle;
+}
+.weather-header .location text {
+  font-size: 40rpx;
+  color: #fff;
+  padding-left: 10rpx;
+}
+.weather-header .refresh text {
+  font-size: 28rpx;
+  color: #fff;
+  padding-left: 10rpx;
+}

@@ -1,0 +1,26 @@
+<view class="weather-now">
+	<!-- {{weatherData}} -->
+		<view class="temp">
+		  <text>{{weatherData.temp}}°</text>
+		</view>
+    <view class="weather">
+      <image src="{{weatherIconUrl}}{{weatherCode}}{{weatherStr}}.png" class="weather-icon" mode="widthFix" />
+      <text>{{weatherData.text}}</text>
+		</view>
+		<view class="info">
+      <!-- <view class="box"> -->
+			<view class="feels_like">
+        <text class="title">体感</text>
+        <text class="value">{{weatherData.feels_like}}°</text>
+      </view>
+      <view class="rh">
+        <text class="title">湿度</text>
+        <text class="value">{{weatherData.rh}}%</text>
+      </view>
+      <view class="wind_class">
+        <text class="title">{{weatherData.wind_dir}}</text>
+        <text class="value">{{weatherData.wind_class}}</text>
+      </view>
+      <!-- </view> -->
+		</view>
+	</view>
