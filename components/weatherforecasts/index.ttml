@@ -1,15 +1,17 @@
 <view class="weather-forecasts">
   <view class="box-title">5天预报</view>
   <view class="weather-list">
-    <view class="weather-list-item" tt:for="{{[1,2,3,4,5]}}" tt:for-index="idx" tt:for-item="itemName">
-      <text class="title">{{weatherData.week}}</text>
-      <text class="min-text">{{weatherData.date}}</text>
+    <view class="weather-list-item" tt:for="{{dataSource}}" tt:for-index="idx" tt:for-item="itemName">
+      <text class="title">{{itemName.week}}</text>
+      <text class="min-text">{{itemName.date}}</text>
       <view class="weather-list-item-icon">
-      <image src="{{weatherIconUrl}}{{weatherData.text_day_code}}.png" class="weather-icon-min" mode="widthFix" />
+        <image src="{{weatherIconUrl}}{{itemName.text_day_code}}.png" lazyLoad class="weather-icon-min" mode="widthFix" />
+        <text class="title">{{itemName.text_day}}</text>
       </view>
-      <text class="min-text">{{weatherData.low}}°~{{weatherData.high}}°</text>
-      <text class="title">{{weatherData.wd_day}}</text>
-      <text class="min-text">{{weatherData.wc_day}}</text>
+      <text class="min-text">{{itemName.low}}°~{{itemName.high}}°</text>
+      <text class="title">{{itemName.wd_day}}</text>
+      <text class="min-text">{{itemName.wc_day}}</text>
     </view>
+    <view class='empty' tt:if='{{!dataSource.length}}'>暂无数据</view>
   </view>
 </view>

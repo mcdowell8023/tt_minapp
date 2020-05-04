@@ -1,9 +1,18 @@
 {
-  "pages": ["pages/weather/index", "pages/webView/index"],
+  "pages": [
+    "pages/weather/index",
+    "pages/selectCity/index",
+    "pages/webView/index"
+  ],
   "window": {
     "backgroundTextStyle": "black",
     "navigationBarBackgroundColor": "black",
     "navigationBarTitleText": "蓝将云手机",
     "navigationBarTextStyle": "#fff"
+  },
+  "prefetches": {
+    "pages/selectCity/index": [
+      "https://test.91lanjiang.com/tcss-api/weather/getWeatherByNameLike?name="
+    ]
   }
 }

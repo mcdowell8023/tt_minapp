@@ -1,9 +1,9 @@
 .weatherlayout {
   background: linear-gradient(0deg, rgba(0, 3, 7, 1), rgba(19, 69, 137, 1));
-  min-height: 100vh;
 }
 .weatherlayout-content {
   padding: 20rpx 30rpx;
   background-position: center;
   background-size: cover;
+  min-height: 100vh;
 }

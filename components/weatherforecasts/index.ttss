@@ -1,41 +1,47 @@
-
 .weather-icon-min {
   width: 72rpx;
   height: 72rpx;
 }
-
 .weather-forecasts {
   color: #fff;
-  padding: 60rpx 10rpx 10rpx;
-  border-bottom:2rpx solid #fff; 
+  padding: 40rpx 10rpx 10rpx;
+  border-bottom: 2rpx solid #fff;
 }
-.weather-forecasts .box-title{
+.weather-forecasts .box-title {
   padding: 10rpx 0rpx;
-  border-bottom:2rpx solid #fff; 
+  border-bottom: 2rpx solid #fff;
 }
-.weather-list{
+.weather-list {
   display: flex;
   padding-top: 20rpx;
   padding-bottom: 10rpx;
 }
-.weather-list .weather-list-item{
+.weather-list .weather-list-item {
   width: 20%;
   padding: 20rpx 10rpx;
-  border-right: 1px dashed #fff; 
+  border-right: 1px dashed #fff;
   text-align: center;
 }
-.weather-list .weather-list-item:nth-child(5){
-  border-right: none; 
+.weather-list .weather-list-item:nth-child(5) {
+  border-right: none;
 }
-.weather-list-item text{
+.weather-list-item text {
   display: block;
-  font-size:28rpx; 
-  margin-bottom: 10rpx; 
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
 }
 
-.weather-list-item .min-text{
-  font-size:24rpx; 
+.weather-list-item .min-text {
+  font-size: 24rpx;
 }
-.weather-list-item-icon{
+.weather-list-item-icon {
   padding: 20rpx 0;
+}
+
+.empty {
+  width: 100%;
+  text-align: center;
+  padding-top: 60rpx;
+  padding-bottom: 60rpx;
+  font-size: 30rpx;
 }

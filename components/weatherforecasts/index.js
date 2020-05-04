@@ -2,7 +2,7 @@
  * @Author: mcdowell
  * @Date: 2020-04-28 14:32:56
  * @LastEditors: mcdowell
- * @LastEditTime: 2020-04-28 20:08:08
+ * @LastEditTime: 2020-04-29 11:16:45
  */
 const { globalData } = getApp()
 Component({
@@ -12,14 +12,16 @@ Component({
       type: String,
       value: globalData.weatherIconUrl,
     },
-    nowData: {
-      type: String,
+    dataSource: {
+      type: Object,
       value: null,
+    },
+    weatherStr: {
+      type: String,
+      value: 'd',
     },
   },
   data: {
-    // 大于18 点 天黑
-    weatherStr: new Date().getHours() > 18 ? 'n' : 'd',
     weatherData: {
       date: '04-28',
       high: 30,
@@ -33,19 +35,6 @@ Component({
       wd_day: '西南风',
       wd_night: '西南风',
       week: '星期二',
-    },
-  },
-  attached() {
-    // 设置 白天黑夜状态
-    this.setWeatherStr()
-  },
-  definitionFilter: {},
-  methods: {
-    // 自定义方法
-    setWeatherStr: function () {
-      this.setData({
-        weatherStr: new Date().getHours() > 10 ? 'n' : 'd',
-      })
     },
   },
 })

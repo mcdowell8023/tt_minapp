@@ -1,0 +1,10 @@
+<view class="weather-header">
+  <view class="location" bindtap="changeCity">
+  <image src="https://cdn.heweather.com/img/plugin/190516/icon/h5/location.png" class="weather-icon-min" mode="widthFix" />
+  <text>{{dataSource.name}}</text>
+  </view>
+  <view class="refresh" bindtap="refresh">
+    <image src="https://cdn.heweather.com/img/plugin/190516/icon/h5/refresh.png" class="weather-icon-min" mode="widthFix"/>
+    <text>{{dataSource.uptime}} 更新</text>
+  </view>
+</view>

@@ -1,0 +1,37 @@
+<view class='container'>
+  <view class="wrapper">
+    <view class='search'>
+      <view class="inner">
+        <image class='icon' src='/image/search_grey.png'></image>
+        <input value='{{inputText}}' placeholder='请输入城市名，快速查询天气信息' maxlength='20' confirm-type='搜索' bindinput='inputFilter' bindconfirm='inputFilter' bindfocus='inputFilter'></input>
+      </view>
+      <text class='cancel' bindtap='cancel'>清空</text>
+    </view>
+  </view>
+  <!-- <view class='top' tt:if='{{hotCities.length}}'>
+    <view class='title'>热门城市</view>
+    <view class='items'>
+      <view class='item' hover-class='hover-ddd' bindtap='choose' data-item='{{item}}' tt:key='{{index}}' tt:for='{{hotCities}}'>{{item.name}}</view>
+    </view>
+  </view> -->
+  <view class='hot'>
+    <view class='title'>猜你想找</view>
+    <view class='cities'>
+      <view class='item active' bindtap='choose'>
+        <image class='icon' src='/image/location_s_w.png'></image>
+        <view>定位</view>
+      </view>
+      <view class='item' hover-class='active' bindtap='choose' tt:for='{{hotCities}}' tt:key='{{index}}' data-code='{{item.code}}'>{{item.name}}</view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view tt:key='{{index}}' tt:for='{{showItems}}'>
+      <view class='key'>{{item.letter}}</view>
+      <view class='values'>
+        <view tt:key='{{index}}' class='value' hover-class='hover' tt:for='{{item.data}}' bindtap='choose' data-code='{{item.code}}'>{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='empty' tt:if='{{!showItems}}'>暂无城市可以选择</view>
+
+</view>

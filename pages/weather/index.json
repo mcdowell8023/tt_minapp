@@ -3,6 +3,7 @@
   "enablePullDownRefresh": true,
   "usingComponents": {
     "weather-layout": "../../components/weatherlayout/index",
+    "weather-header": "../../components/weatherheader/index",
     "weather-now": "../../components/weathertoday/index",
     "weather-forecasts": "../../components/weatherforecasts/index"
   }
