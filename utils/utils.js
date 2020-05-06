@@ -2,7 +2,7 @@
  * @Author: mcdowell
  * @Date: 2020-04-29 09:43:45
  * @LastEditors: mcdowell
- * @LastEditTime: 2020-05-04 16:40:03
+ * @LastEditTime: 2020-05-06 15:30:43
  */
 
 /**
@@ -738,6 +738,35 @@ function makePy(str, extractFirst) {
   return result
 }
 
+function flat(arr) {
+  return arr.reduce((pre, value) => {
+    return Array.isArray(value) ? [...pre, ...flat(value)] : [...pre, value]
+  }, [])
+}
+
+function sortGroupBy(arr, name) {
+  let json = {}
+  arr.map((item, index) => {
+    const keyName = item[name].substr(0, 1)
+    if (!json[keyName]) {
+      json[keyName] = [item]
+    } else {
+      json[keyName].push(item)
+    }
+  })
+  console.log(json, 'res')
+  const arrkeys = Object.keys(json).sort((itemA, itemB) => {
+    // console.log(makePy(itemA).toLowerCase(), makePy(itemB).toLowerCase())
+    return makePy(itemA.substr(1, 2)) - makePy(itemB.substr(1, 2))
+  })
+
+  const res = arrkeys.map((key, index) => {
+    return json[key]
+  })
+
+  return res
+}
+
 /**
  * @author mcdowell
  * @description 根据 拼音进行地区排序
@@ -745,43 +774,111 @@ function makePy(str, extractFirst) {
  * @param {Boolean} extractFirst 只获取汉字拼音首字母
  * @returns {String} 目标的拼音字符串
  **/
+
+// const pySegSort = (arr, name) => {
+//   let letters = 'ABCDEFIGHIKMNOPQRSTWXYZ'.split('')
+//   let keysArr = Object.keys(PY_MAPS)
+//   let curr = null
+//   return letters
+//     .map((letter) => {
+//       curr = { letter, data: [], json: {} }
+//       arr.map((result) => {
+//         const item = name && result[name] ? result[name] : result
+//         const pyWeight = makePy(item)
+//         if (pyWeight.substr(0, 1) === letter) {
+//           const itemKey = item.substr(0, 1)
+//           const keyIndex = keysArr.indexOf(makePy(itemKey).toLowerCase())
+//           if (!curr.data[keyIndex]) {
+//             curr.data[keyIndex] = [result]
+//           } else {
+//             curr.data[keyIndex].push(result)
+//           }
+//         }
+//       })
+//       curr.data = curr.data
+//         .filter((item) => item)
+//         .map((arr) => {
+//           const list = arr.sort((a, b) => {
+//             const itemA =
+//               name && a[name] ? a[name].substr(1, 2) : a.substr(1, 2)
+//             const itemB =
+//               name && b[name] ? b[name].substr(1, 2) : b.substr(1, 2)
+//             return makePy(itemA) < makePy(itemB) ? -1 : 1
+//           })
+//           return list
+//         })
+//       // 拉平 多维数组
+//       curr.data = flat(curr.data)
+//       return curr.data.length ? curr : null
+//     })
+//     .filter((item) => item)
+
+// 有效避免 同音不同字 混在一起 的问题
 const pySegSort = (arr, name) => {
   let letters = 'ABCDEFIGHIKMNOPQRSTWXYZ'.split('')
-  let keysArr = Object.keys(PY_MAPS)
   let curr = null
   return letters
     .map((letter) => {
-      curr = { letter, data: [] }
+      // 按照字母分组
+      curr = { letter, data: [], json: {} }
       arr.map((result) => {
         const item = name && result[name] ? result[name] : result
-        if (makePy(item, true).substr(0, 1) === letter) {
-          curr.data.push(result)
+        if (makePy(item).substr(0, 1) === letter) {
+          // 按照汉字分组
+          const itemKey = item.substr(0, 1)
+          if (!curr.json[itemKey]) {
+            curr.json[itemKey] = [result]
+          } else {
+            curr.json[itemKey].push(result)
+          }
         }
       })
-
-      /* 
-
-      借助 上面拼音字典
-      
-      curr.data = curr.data.sort((a, b) => {
-        const itemA = name && a[name] ? a[name].substr(0, 1) : a.substr(0, 1)
-        const itemB = name && b[name] ? b[name].substr(0, 1) : b.substr(0, 1)
-        // 查找字典顺序
-        const aIndex = keysArr.indexOf(makePy(itemA).toLowerCase())
-        const bIndex = keysArr.indexOf(makePy(itemB).toLowerCase())
-        return aIndex - bIndex
-      }) */
-
-      curr.data.sort((a, b) => {
-        const itemA = name && a[name] ? a[name] : a
-        const itemB = name && b[name] ? b[name] : b
-        console.log(makePy(itemA).toLowerCase(), makePy(itemB).toLowerCase())
-        return makePy(itemA).toLowerCase() - makePy(itemB).toLowerCase()
-      })
+      // 先 相同字母 首个汉字顺序 排序
+      const list = Object.keys(curr.json)
+        .sort((itemA, itemB) => {
+          return makePy(itemA) < makePy(itemB) ? -1 : 1
+        })
+        .map((key) => {
+          //相同汉字 第二个字 排序
+          return curr.json[key].sort((a, b) => {
+            const itemA =
+              name && a[name] ? a[name].substr(1, 2) : a.substr(1, 2)
+            const itemB =
+              name && b[name] ? b[name].substr(1, 2) : b.substr(1, 2)
+            return makePy(itemA) < makePy(itemB) ? -1 : 1
+          })
+        })
+      // 拉平 多维数组
+      curr.data = flat(list)
+      // 删除 中介 属性
+      delete curr.json
       return curr.data.length ? curr : null
     })
     .filter((item) => item)
 }
+
+// 这种方法 导致  同音不同字 混在一起
+// const pySegSort = (arr, name) => {
+//   let letters = 'ABCDEFIGHIKMNOPQRSTWXYZ'.split('')
+//   let curr = null
+//   return letters
+//     .map((letter) => {
+//       curr = { letter, data: [], json: {} }
+//       arr.map((result) => {
+//         const item = name && result[name] ? result[name] : result
+//         if (makePy(item).substr(0, 1) === letter) {
+//           curr.data.push(result)
+//         }
+//       })
+//       curr.data = curr.data.sort((a, b) => {
+//         const itemA = name && a[name] ? a[name] : a
+//         const itemB = name && b[name] ? b[name] : b
+//         return makePy(itemA) < makePy(itemB) ? -1 : 1
+//       })
+//       return curr.data.length ? curr : null
+//     })
+//     .filter((item) => item)
+// }
 
 let isEmptyObject = (obj) => {
   for (let i in obj) {
