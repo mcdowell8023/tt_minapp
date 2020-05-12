@@ -2,10 +2,10 @@
  * @Author: mcdowell
  * @Date: 2020-04-27 15:01:40
  * @LastEditors: mcdowell
- * @LastEditTime: 2020-04-27 16:56:27
+ * @LastEditTime: 2020-05-11 15:31:17
  * 小程序 http 请求公共接口
  */
-function httpRequest(url, params = {}, header = null) {
+function httpRequest(url, params = {}, header = null, isToast = true) {
   const baseUrl = 'https://test.91lanjiang.com/tcss-api'
   return new Promise(function (resolve, reject) {
     tt.request({
@@ -21,11 +21,14 @@ function httpRequest(url, params = {}, header = null) {
         const { status, message, data = null } = resData
         if (statusCode !== 200 || status !== '200') {
           console.log(res, '接口返回报错')
-          tt.showToast({
-            title: message || `${statusCode}:${errMsg}`,
-            icon: 'fail',
-            duration: 2000,
-          })
+          if (isToast) {
+            tt.showToast({
+              title: message || `${statusCode}:${errMsg}`,
+              icon: 'fail',
+              duration: 2000,
+            })
+          }
+          reject(res.data)
         }
         resolve(data)
       },

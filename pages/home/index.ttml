@@ -19,7 +19,7 @@
 			<image src="/image/ad-banner@2x.png" title="蓝将云手机" lazy-load="{{lazyLoad}}" style="width:100%;" mode="widthFix" />
 		</view> -->
 		<view class="blue-btn-box">
-			<button type="primary" bindtap="go2Webview">点击立即试玩</button>
+			<button type="primary" disabled="{{isDisabled}}" bindtap="goTrial">1分钱试玩</button>
 		</view>
 		<view class="func-box pt20 pb20">
 			<view>

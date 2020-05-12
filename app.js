@@ -13,6 +13,8 @@ App({
     })
   },
   globalData: {
+    appId: 'tte45492e97b7eab98',
+    payTimeout: 10, // 支付后 10分内都去查询
     // 是否保持常亮，离开小程序失效
     keepscreenon: false,
     systeminfo: {},

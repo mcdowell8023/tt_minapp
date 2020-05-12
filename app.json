@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/weather/index",
+    "pages/home/index",
     "pages/selectCity/index",
-    "pages/webView/index"
+    "pages/webView/index",
+    "pages/weather/index"
   ],
   "window": {
     "backgroundTextStyle": "black",
